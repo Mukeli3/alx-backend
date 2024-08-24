@@ -25,12 +25,13 @@ class MRUCache(BaseCaching):
                 self.cache_data[key] = item
 
             else:
-                if len(self.cache_data) >+ BaseCaching.MAX_ITEMS:
+                if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
                     mru_key = next(reversed(self.cache_data))
                     self.cache_data.pop(mru_key)
                     print("DISCARD:", mru_key)
 
             self.cache_data[key] = item
+
     def get(self, key):
         """
         Gets an item from the cache by key and if key doesn't exist or is
@@ -39,4 +40,3 @@ class MRUCache(BaseCaching):
         if key is None:
             return None
         return self.cache_data.get(key)
- 
