@@ -15,22 +15,21 @@ class MRUCache(BaseCaching):
         """
         super().__init__()
         self.cache_data = {}
+        self.mru_key = None
 
     def put(self, key, item):
         """
         Add an item to the cache
         """
-        if key is not None and item is not None:
-            if key in self.cache_data:
-                self.cache_data[key] = item
+        if key is None and item is None:
+            return
+        if len(self.cache_data) >= BaseCaching.MAX_ITEMS and key not in self.cache_data:
+            if self.mru_key:
+                del self.cache_data[self.mru_key]
+                print("DISCARD:", self.mru_key)
 
-            else:
-                if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
-                    mru_key = next(reversed(self.cache_data))
-                    self.cache_data.pop(mru_key)
-                    print("DISCARD:", mru_key)
-
-            self.cache_data[key] = item
+        self.cache_data[key] = item
+        self.mru_key = key
 
     def get(self, key):
         """
