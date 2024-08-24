@@ -7,14 +7,19 @@ from base_caching import BaseCaching
 
 class LRUCache(BaseCaching):
     """
+    LRUCache caching system
     """
     def __init__(self):
+        """
+        Initialize the class
+        """
         super().__init__()
         self.cache_data = {}
         self.order = []
 
     def put(self, key, item):
         """
+        Add item
         """
         if key is not None and item is not None:
             if key in self.cache_data:
