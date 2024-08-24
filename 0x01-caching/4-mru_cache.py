@@ -7,15 +7,18 @@ from base_caching import BaseCaching
 
 class MRUCache(BaseCaching):
     """
+    MRUCache is a caching system that inherits from BaseCaching
     """
     def __init__(self):
         """
+        Initialize the class and call the parent init method.
         """
         super().__init__()
         self.cache_data = {}
 
     def put(self, key, item):
         """
+        Add an item to the cache
         """
         if key is not None and item is not None:
             if key in self.cache_data:
