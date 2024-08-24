@@ -23,11 +23,11 @@ class MRUCache(BaseCaching):
         """
         if key is None and item is None:
             return
-        if len(self.cache_data) >= BaseCaching.MAX_ITEMS and
-        key not in self.cache_data:
-            if self.mru_key:
-                del self.cache_data[self.mru_key]
-                print("DISCARD:", self.mru_key)
+        if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
+            if key not in self.cache_data:
+                if self.mru_key:
+                    del self.cache_data[self.mru_key]
+                    print("DISCARD:", self.mru_key)
 
         self.cache_data[key] = item
         self.mru_key = key
