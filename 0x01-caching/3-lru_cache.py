@@ -24,7 +24,7 @@ class LRUCache(BaseCaching):
         if key is not None and item is not None:
             if key in self.cache_data:
                 self.cache_data[key] = item
-                self.order.remove(key) # remove old posn
+                self.order.remove(key)  # remove old posn
             else:
                 if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
                     lru_key = self.order.pop(0)
