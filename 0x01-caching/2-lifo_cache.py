@@ -2,8 +2,9 @@
 """
 This module defines a class LIFOCache which is a caching system
 """
-BaseCaching = __import__('base_caching').BaseCaching
 from collections import OrderedDict
+BaseCaching = __import__('base_caching').BaseCaching
+
 
 class LIFOCache(BaseCaching):
     """
