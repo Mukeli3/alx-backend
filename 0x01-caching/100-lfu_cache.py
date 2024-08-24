@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" 
+"""
 This module defines LFUCache caching system
 """
 from collections import OrderedDict
