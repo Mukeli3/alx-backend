@@ -21,5 +21,6 @@ def index():
     """
     return render_template('2-index.htm')
 
+
 if __name__ == "__main__":
     app.run(debug=True)
