@@ -32,7 +32,7 @@ def get_locale() -> str:
 @app.route('/')
 def index():
     """
-    visualize
+    visualize by rendering template
     """
     return render_template('2-index.htm')
 
