@@ -17,7 +17,7 @@ class Config:
 
 app = Flask(__name__)
 app.config.from_object(Config)
-
+pp.url_map.strict_slashes = False
 babel = Babel(app)
 
 
@@ -26,7 +26,7 @@ def get_locale() -> str:
     """
     function gets language code for a web page
     """
-    return request.accept_languages.best_match([LANGUAGES])
+    return request.accept_languages.best_match(['LANGUAGES'])
 
 
 @app.route('/')
@@ -34,7 +34,7 @@ def index():
     """
     visualize by rendering template
     """
-    return render_template('2-index.htm')
+    return render_template('2-index.html')
 
 
 if __name__ == "__main__":
