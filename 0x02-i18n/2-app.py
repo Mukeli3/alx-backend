@@ -7,8 +7,8 @@ from flask_babel import Babel
 
 
 @babel.localeselector
-def get_locale():
+def get_locale() -> str:
     """
-    function gets languages
+    function gets language code for a web page
     """
-    return request.accept_languages(['fr', 'en'])
+    return request.accept_languages.best_match(['fr', 'en'])
