@@ -30,7 +30,7 @@ def get_locale() -> str:
 
 
 @app.route('/')
-def index():
+def index() -> str:
     """
     visualize by rendering template
     """
