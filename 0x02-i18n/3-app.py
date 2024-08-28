@@ -34,7 +34,7 @@ def index() -> str:
     """
     visualize by rendering template
     """
-    return render_template('3-index.html')
+    return render_template('3-index.html', title=title, h1=h1)
 
 
 if __name__ == "__main__":
