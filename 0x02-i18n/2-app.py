@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-get_locale function from request
+This module defines a get_locale function from request
 """
 from flask import Flask, request, render_template
 from flask_babel import Babel
