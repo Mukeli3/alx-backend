@@ -3,10 +3,8 @@
 # This file is distributed under the same license as the PROJECT project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
 #
-msgid "[home_title] Bienvenue chez Holberton"
-msgstr "Welcome to Holberton"
-msgid "[home_header] Bonjour monde!"
-msgstr "Hello world!"
+msgid ""
+msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2024-08-27 23:10+0000\n"
@@ -20,3 +18,8 @@ msgstr "Hello world!"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
+msgid "[home_title] Bienvenue chez Holberton"
+msgstr "Bienvenue chez Holberton"
+
+msgid "[home_header] Bonjour monde!"
+msgstr "Bonjour  mode!"
