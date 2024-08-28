@@ -26,7 +26,7 @@ def get_locale() -> str:
     """
     function gets language code for a web page
     """
-    return request.accept_languages.best_match([app.config'LANGUAGES'])
+    return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 
 @app.route('/')
