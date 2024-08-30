@@ -34,7 +34,9 @@ def index() -> str:
     """
     visualize by rendering template
     """
-    return render_template('3-index.html')
+    return render_template('3-index.html',
+                          home_title=_("home_title"),
+                          home_header=_("home_header"))
 
 
 if __name__ == "__main__":
