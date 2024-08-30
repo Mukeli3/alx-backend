@@ -23,10 +23,10 @@ msgstr ""
 # This file is distributed under the same license as the PROJECT project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
 #
-msgid "[home_title] Welcome to Holberton"
+msgid "home_title"
 msgstr "Welcome to Holberton"
 
-msgid "[home_header] Hello world!"
+msgid "home_header"
 msgstr "Hello world!"
 ~
 ~
