@@ -3,7 +3,7 @@
 get_locale function from request
 """
 from flask import Flask, request, render_template
-from flask_babel import Babel
+from flask_babel import Babel, _
 
 
 class Config:
@@ -35,8 +35,8 @@ def index() -> str:
     visualize by rendering template
     """
     return render_template('3-index.html',
-                          home_title=_("home_title"),
-                          home_header=_("home_header"))
+                           home_title=_("home_title"),
+                           home_header=_("home_header"))
 
 
 if __name__ == "__main__":
