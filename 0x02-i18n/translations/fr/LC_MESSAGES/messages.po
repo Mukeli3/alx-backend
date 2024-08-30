@@ -22,4 +22,4 @@ msgid "[home_title] Bienvenue chez Holberton"
 msgstr "Bienvenue chez Holberton"
 
 msgid "[home_header] Bonjour monde!"
-msgstr "Bonjour  mode!"
+msgstr "Bonjour monde!"
