@@ -67,7 +67,7 @@ def index() -> str:
         msg_key = 'logged_in_as'
         username = user['name']
     else:
-        msg_key = 'not_logges_in'
+        msg_key = 'not_logged_in'
         username = None
 
     return render_template('5-index.html', msg_key=msg_key, username=username)
