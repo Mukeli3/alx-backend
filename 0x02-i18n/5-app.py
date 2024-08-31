@@ -33,10 +33,10 @@ def get_user():
     """
     function gets a user by ID
     """
-    u_id = request.args.get('login_as', type=int)
+    u_id = request.args.get('login_as')
     if u_id is None:
         return None
-    return users.get(u_id)
+    return users.get(int(u_id))
 
 
 @app.before_request
@@ -53,6 +53,9 @@ def get_locale() -> str:
     """
     function gets language code for a web page
     """
+    locale = request.args.get('locale')
+    if locale in app.config['LANGUAGES']:
+        return locale
     if user and user['locale']:
         return user['locale']
     return request.accept_languages.best_match(app.config['LANGUAGES'])
@@ -63,14 +66,7 @@ def index() -> str:
     """
     visualize by rendering template
     """
-    if user:
-        msg_key = 'logged_in_as'
-        username = user['name']
-    else:
-        msg_key = 'not_logged_in'
-        username = None
-
-    return render_template('5-index.html', msg_key=msg_key, username=username)
+    return render_template('5-index.html')
 
 
 if __name__ == "__main__":
