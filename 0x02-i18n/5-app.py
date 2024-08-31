@@ -28,6 +28,7 @@ users = {
     4: {"name": "Teletubby", "locale": None, "timezone": "Europe/London"},
 }
 
+
 def get_user():
     """
     function gets a user by ID
@@ -37,12 +38,14 @@ def get_user():
         return None
     return users.get(u_id)
 
+
 @app.before_request
 def before_request():
     """
     function sets the user as a global
     """
     g.user = get_user()
+
 
 @babel.localeselector
 def get_locale() -> str:
