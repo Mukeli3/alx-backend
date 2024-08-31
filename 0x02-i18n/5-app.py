@@ -64,11 +64,13 @@ def index() -> str:
     visualize by rendering template
     """
     if user:
-        return _('logged_in_as', username=user['name'])
+        msg_key = 'logged_in_as'
+        username = user['name']
     else:
-        return _('not_logged_in')
+        msg_key = 'not_logges_in'
+        username = None
 
-    return render_template('5-index.html')
+    return render_template('5-index.html', msg_key=msg_key, username=username)
 
 
 if __name__ == "__main__":
