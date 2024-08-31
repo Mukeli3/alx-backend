@@ -3,7 +3,7 @@
 get_locale function from request
 """
 from flask import Flask, request, render_template, g
-from flask_babel import Babel, _
+from flask_babel import Babel
 
 
 class Config:
@@ -69,6 +69,7 @@ def index() -> str:
         return _('not_logged_in')
 
     return render_template('5-index.html')
+
 
 if __name__ == "__main__":
     app.run(debug=True)
