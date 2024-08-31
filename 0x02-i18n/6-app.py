@@ -3,7 +3,7 @@
 get_locale function from request
 """
 from flask import Flask, request, render_template, g
-from flask_babel import Babel, gettext as _
+from flask_babel import Babel
 
 
 class Config:
@@ -17,7 +17,7 @@ class Config:
 
 app = Flask(__name__)
 app.config.from_object(Config)
-
+app.url_map.strict_slashes = False
 babel = Babel(app)
 
 
@@ -33,11 +33,10 @@ def get_user():
     """
     function gets a user by ID
     """
-    u_id = request.args.get('login_as', type=int)
+    u_id = request.args.get('login_as')
     if u_id is None:
         return None
-    if u_id and u_id.isdigit():
-        return users.get((u_id)
+    return users.get(int(u_id))
 
 
 @app.before_request
@@ -74,7 +73,7 @@ def index() -> str:
     """
     visualize by rendering template
     """
-    return render_template('6-index.html')
+    return render_template('5-index.html')
 
 
 if __name__ == "__main__":
