@@ -44,7 +44,8 @@ def before_request():
     """
     function sets the user as a global
     """
-    g.user = get_user()
+    user = get_user()
+    g.user = user
 
 
 @babel.localeselector
@@ -52,8 +53,8 @@ def get_locale() -> str:
     """
     function gets language code for a web page
     """
-    if g.user and g.user['locale']:
-        return g.user['locale']
+    if user and user['locale']:
+        return user['locale']
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 
@@ -62,15 +63,12 @@ def index() -> str:
     """
     visualize by rendering template
     """
-    if g.user:
-        return _('logged_in_as', username=g.user['name'])
+    if user:
+        return _('logged_in_as', username=user['name'])
     else:
         return _('not_logged_in')
 
-    return render_template('5-index.html',
-                           home_title=_("home_title"),
-                           home_header=_("home_header"))
-
+    return render_template('5-index.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
